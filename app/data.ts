@@ -49,27 +49,27 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
+    company: 'PT ProjectIndo Teknowindata',
+    title: 'IT Operation',
     start: '2024',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: '#',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
+    company: '',
+    title: 'PT Pertamina Training & Consulting',
+    start: '2023',
     end: '2024',
-    link: 'https://ibelick.com',
+    link: '#',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'PT Mitra AdiPerkasa',
+    title: 'IT support',
+    start: '2022',
+    end: '2022',
+    link: '#',
     id: 'work3',
   },
 ]
@@ -106,20 +106,20 @@ export const BLOG_POSTS: BlogPost[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
+    link: 'https://github.com/whudn',
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://twitter.com/whudn',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://www.linkedin.com/in/whudn',
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.instagram.com/whudn_',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = 'w.ahyu@outlook.com'
