@@ -57,8 +57,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work1',
   },
   {
-    company: '',
-    title: 'PT Pertamina Training & Consulting',
+    company: 'PT Pertamina Training & Consulting',
+    title: 'IT Helpdesk',
     start: '2023',
     end: '2024',
     link: '#',
@@ -76,7 +76,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
+    title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     description: 'How AI is changing the way we design',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
     uid: 'blog-1',
@@ -89,7 +89,7 @@ export const BLOG_POSTS: BlogPost[] = [
     uid: 'blog-2',
   },
   {
-    title: 'What I learned from my first year of freelancing',
+    title: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout',
     description:
       'A look back at my first year of freelancing and what I learned',
     link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
