@@ -66,7 +66,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'PT Mitra AdiPerkasa',
-    title: 'IT support',
+    title: 'IT Support',
     start: '2022',
     end: '2022',
     link: '#',
@@ -76,9 +76,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: 'How to Fix Missing Drive During Windows Install Using Intel RST',
+    description: 'Quick fix for the hidden SSD issue when installing Windows',
+    link: '/blog/how-to-fix-missing-drive-during-windows-install-using-intel-rst',
     uid: 'blog-1',
   },
   {
@@ -96,7 +96,7 @@ export const BLOG_POSTS: BlogPost[] = [
     uid: 'blog-3',
   },
   {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
+    title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     description: 'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
     link: '/blog/example-mdx-metadata',
     uid: 'blog-4',

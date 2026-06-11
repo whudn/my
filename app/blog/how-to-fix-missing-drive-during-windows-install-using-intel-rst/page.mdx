@@ -1,0 +1,20 @@
+export const metadata = {
+  title: 'How to Fix Missing Drive During Windows Install Using Intel RST',
+  description:
+    'Quick fix for the hidden SSD issue when installing Windows.',
+  alternates: {
+    canonical: '/blog/how-to-fix-missing-drive-during-windows-install-using-intel-rst',
+  },
+};
+
+<Cover
+  src="https://cdn.cosmos.so/affd4b79-e848-4dfd-bd42-5f2c4a847365?format=jpeg"
+  alt="Motherboard and storage drive tech layout"
+  caption="cosmos.com"
+/>
+
+# How to Fix Missing Drive During Windows Install Using Intel RST
+
+Intel RST basically speeds up your NVMe SSD or HDD, manages RAID if you're running multiple drives, and saves battery when your laptop is chilling. 
+
+To use it when your drive goes missing during a fresh Windows install, just grab SetupRST.exe from another PC, open Command Prompt, and unpack it using SetupRST.exe -extractdrivers RST. Toss that extracted RST folder right into your Windows installation USB, plug it into the laptop, and boot into the installer. Once you hit the blank drive selection screen, click Load Driver, browse to that RST folder on your USB, and hit next. The drive will pop up instantly so you can partition it and finish the installation.
