@@ -1,0 +1,187 @@
+export const metadata = {
+  title: 'Introducing Work Experience Popup System',
+  description:
+    'Learn how I upgraded the work experience section with an interactive popup system that displays detailed MDX content right on the homepage',
+  alternates: {
+    canonical: '/blog/work-experience-popup-system',
+  },
+};
+
+# Work Experience Popup System
+
+So I just upgraded the work experience section on the homepage. Before it was just regular links that would redirect you somewhere else or open an external site. Now when you click on a work experience card, a popup shows up with all the details right there.
+
+## What Changed?
+
+**Before:**
+- Click work experience → get redirected to another page or external link
+- You gotta navigate around, tab switching, the whole deal
+
+**Now:**
+- Click work experience → smooth popup appears
+- Read all the details right on the homepage
+- Can scroll if the content's long
+- Close it and you're back to the homepage
+
+---
+
+## Why Build This?
+
+Honestly, I thought it'd be better to keep everything on the homepage without making people navigate away. This way they can check out the work experience details without losing context. Plus the animation makes it feel less janky than a regular link.
+
+---
+
+## What's Included
+
+- 🎨 **Smooth Animation** - The popup fades in with a nice morphing effect
+- 📝 **MDX Content** - Markdown files make it easy to update stuff
+- 📱 **Responsive** - Works on desktop and mobile without issues
+- 🌙 **Dark Mode** - Full dark mode support, obviously
+- ⌨️ **Keyboard Friendly** - Press ESC to close or click the X button
+
+---
+
+## Files Changed/Created
+
+### New Stuff:
+
+**`components/work-experience-dialog.tsx`**
+- Main component that handles the popup
+- Deals with animations, state management, and loading the MDX content
+- Wraps everything together nicely
+
+**`components/mdx-content.tsx`**
+- Dynamically loads the MDX files
+- Uses React lazy + Suspense for optimal loading
+- Automatically applies markdown styling
+
+### Updated:
+
+**`app/data.ts`**
+```typescript
+export type WorkExperience = {
+  company: string
+  title: string
+  start: string
+  end: string
+  link: string
+  id: string
+  mdxPath?: string  // Points to the MDX file
+}
+```
+
+Added `mdxPath` so the app knows which MDX file to load for each work experience.
+
+**`app/page.tsx`**
+```typescript
+import { WorkExperienceDialog } from '@/components/work-experience-dialog'
+
+// Used to be <a> tags, now using the component
+{WORK_EXPERIENCE.map((job) => (
+  <WorkExperienceDialog key={job.id} job={job} />
+))}
+```
+
+### Content Files:
+
+**`app/experience/company1.mdx`** - PT 1
+**`app/experience/company2.mdx`** - PT 2
+
+---
+
+## How It Works
+
+Pretty straightforward:
+
+1. User clicks a work experience card
+2. The popup animation starts
+3. MDX file loads (only loads when you open the popup)
+4. Markdown gets rendered with nice styling
+5. Popup shows up with the content
+
+Close it and the animation reverses back to the card.
+
+---
+
+## How to Add More Experiences
+
+Just 3 simple steps:
+
+### 1. Create an MDX File
+New file at `app/experience/company-name.mdx`:
+
+```mdx
+---
+id: "work4"
+company: "Some Company"
+title: "Job Title"
+start: "2025"
+end: "Present"
+---
+
+### What I Did
+
+* Worked on feature A
+* Built feature B
+* Fixed bugs and stuff
+
+### Team & Projects
+
+* Collaborated with amazing team
+* Shipped cool stuff
+```
+
+### 2. Add to data.ts
+Add a new item to the `WORK_EXPERIENCE` array:
+
+```typescript
+{
+  company: 'Some Company',
+  title: 'Job Title',
+  start: '2025',
+  end: 'Present',
+  link: 'https://company.com',
+  id: 'work4',
+  mdxPath: '@/app/experience/company-name.mdx',
+}
+```
+
+### 3. Register in mdx-content.tsx
+Update the `MDXMap` object:
+
+```typescript
+const MDXMap = {
+  work1: lazy(() => import('@/app/experience/company-name1.mdx')),
+  work2: lazy(() => import('@/app/experience/company-name2.mdx')),
+  work3: lazy(() => import('@/app/experience/company-name3.mdx')), // Add this
+}
+```
+
+Done! The popup will automatically show up.
+
+---
+
+## Design Stuff
+
+The popup has:
+- White background on light mode, dark background on dark mode
+- Text automatically adjusts colors based on the theme
+- Markdown gets styled automatically with Tailwind's typography plugin
+- Close button in the top right, or press ESC
+
+Pretty minimal, keeps it clean.
+
+---
+
+## Performance Stuff
+
+- MDX files only load when you open the popup (lazy loading)
+- Each MDX file is like 2-3KB, so not heavy at all
+- Animations run at 60fps using Framer Motion
+- Next.js handles code splitting automatically
+
+Nothing fancy, just normal optimization things.
+
+---
+
+That's it! Let me know if you have any questions or if something needs tweaking. 🚀
