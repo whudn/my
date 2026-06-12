@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'Nim - Personal website template',
+    default: 'Wahyu | Personal Website',
     template: '%s | Nim'
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
+  description:  'The digital space of Wahyu — an IT enthusiast currently at war with office printers',
 };
 
 const geist = Geist({
