@@ -69,7 +69,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     title: 'IT Support',
     start: '2022',
     end: '2022',
-    link: '#',
+    link: '/experience/MAP.mdx',
     id: 'work3',
   },
 ]
