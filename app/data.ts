@@ -92,17 +92,17 @@ export const BLOG_POSTS: BlogPost[] = [
     uid: 'blog-1',
   },
   {
-    title: 'Template 1',
+    title: 'A total noobs first time trying MikroTik and immediately getting a massive headache',
     description:
-      'Cuma Template',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+      'A total beginners nightmare trying to configure a borrowed, ancient MikroTik router. Spoiler: It was just one unchecked box',
+    link: '/blog/my-first-time-trying-mikrotik-headache',
     uid: 'blog-2',
   },
   {
-    title: 'Template 2',
+    title: 'Building My "Digital Me" with AI + RAG',
     description:
-      'Cuma Template',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+      'Building a personalized AI chatbot using RAG to turn my static portfolio into a interactive, digital version of myself',
+    link: '/blog/building-my-digital-me-ai-rag',
     uid: 'blog-3',
   },
   {

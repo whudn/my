@@ -1,0 +1,27 @@
+export const metadata = {
+  title: 'A total noobs first time trying MikroTik and immediately getting a massive headache',
+  description:
+    'A total beginners nightmare trying to configure a borrowed, ancient MikroTik router. Spoiler: It was just one unchecked box.',
+  alternates: {
+    canonical: '/blog/my-first-time-trying-mikrotik-headache',
+  },
+};
+
+Okay, let’s start from the absolute jump. I’m a total newbie who was just bored out of my mind and wanted to mess around with a MikroTik router because it’s my first time ever touching one. Zero serious intentions. And here’s the first plot twist: this wasn’t even mine, I BORROWED it! And to make matters worse, this thing is a straight-up relic—so old it’s officially discontinued.
+When I first booted it up, I was lowkey acting like a pro network engineer. Opened Winbox, my initial plan was to just try and wirelessly connect this MikroTik to my home modem. And that’s where the nightmare began.
+
+I learned the ropes bit by bit and finally found the menu to connect to the Wi-Fi. At first it was normal, I set up the password, and when I hit scan, my home Wi-Fi SSID showed up perfectly. I selected it, but when I tried to connect, the MikroTik immediately threw a fat, devastating error: SCAN ERROR, even though my home Wi-Fi SSID was right there on the screen! I started tweaking. I asked AI, raided YouTube, and dug through networking forums. Forums had absolutely zero solutions. I searched Google, found a few threads that seemed to discuss it, but when I clicked them... it was a completely different thread with a totally different topic! Can you imagine the frustration?
+Since I hit a brick wall, I did something completely reckless: I HARD RESET THE ROUTER AND UPDATED THE OS!
+I thought the update would magically fix everything. But when I opened Winbox... BRO, THE ENTIRE WIRELESS MENU WAS GONE, IT CHANGED TO "WIFI" DAMN IT! Literally vanished without a trace! The worst part was that this new wifi menu was completely empty, probably because my device doesn't even support it. My brain was officially fried. I scrambled for answers, and it turned out—CMIIW—some drivers, or whatever you call them, basically vanished. Finding the right MikroTik OS for this device was a pain because it’s wiped from their main website search since it’s discontinued, but Google still had an old page indexed. On that page, I saw they had "extra packages". So I downloaded the wireless extra package manually from the MikroTik site and injected it into the router. The menu finally came back, but when I tried to connect again... STILL NO LUCK! STILL SCAN ERROR!
+
+At this point, I was ready to throw the whole thing out the window. I was exhausted and on the verge of giving up. Since I had nothing to lose, I asked an AI chatbot one last time, and this dumbass robot straight up told me:
+"Yeah bro, if you already updated the OS and reinstalled the wireless extra packages manually but it still says Scan Error, your MikroTik's wireless chip or hardware is definitely fried or defective from old age."
+F*CK! My newbie soul instantly lost all hope.
+
+Before throwing in the towel, I decided to do a quick comparison. I logged into my home modem’s admin dashboard via the browser. I started digging through my home Wi-Fi settings to see what the hell was going on in there.
+Before that, I actually asked AI and it said maybe WPS was enabled on my modem, but turns out WPS was already turned off. And then...
+My eyes suddenly locked onto the security settings of my home Wi-Fi, and there it was: TKIP.
+Instantly, a lightbulb went off in my brain. I rushed back to Winbox, opened the Security Profiles under the Wireless menu, and stared down the Unicast Ciphers and Group Ciphers sections...
+And that was the exact moment I wanted to scream my lungs out...
+THE TKIP CHECKBOX ON MY MIKROTIK WAS COMPLETELY UNCHECKED, F*CKER! That’s why it never connected from the start! That’s why it kept throwing a Scan Error even after a reset and an OS update! My home modem was begging for a TKIP encryption handshake, but I hadn’t given the MikroTik permission to read it because the box wasn’t ticked.
+The second I checked that TKIP box and hit Apply... BOOM! IT CONNECTED IMMEDIATELY, BRO! Right then and there, the status flipped to R, but the SSID scan still errors out when I try to connect, why is that?
