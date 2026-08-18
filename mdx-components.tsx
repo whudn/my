@@ -25,5 +25,36 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       const codeHTML = highlight(children as string)
       return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
     },
+    table: ({ children, ...props }: ComponentPropsWithoutRef<'table'>) => (
+      <div className="overflow-x-auto my-6">
+        <table
+          className="w-full border-collapse rounded-lg overflow-hidden shadow-sm bg-white dark:bg-zinc-900"
+          {...props}
+        >
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({ children, ...props }: ComponentPropsWithoutRef<'thead'>) => (
+      <thead className="bg-zinc-50 dark:bg-zinc-800" {...props}>
+        {children}
+      </thead>
+    ),
+    th: ({ children, ...props }: ComponentPropsWithoutRef<'th'>) => (
+      <th
+        className="border-b border-zinc-200 dark:border-zinc-700 px-4 py-3 text-left font-semibold text-zinc-900 dark:text-zinc-100 text-sm"
+        {...props}
+      >
+        {children}
+      </th>
+    ),
+    td: ({ children, ...props }: ComponentPropsWithoutRef<'td'>) => (
+      <td
+        className="border-b border-zinc-200 dark:border-zinc-700 px-4 py-3 text-zinc-800 dark:text-zinc-300 text-sm"
+        {...props}
+      >
+        {children}
+      </td>
+    ),
   }
 }

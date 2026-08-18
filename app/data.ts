@@ -111,6 +111,12 @@ export const BLOG_POSTS: BlogPost[] = [
     link: '/blog/example-mdx-metadata',
     uid: 'blog-4',
   },
+  {
+    title: 'Activation KMS on Windows OEM',
+    description: 'A quick guide to understanding KMS activation on Windows OEM devices',
+    link: '/blog/windows-kms-oem-activation',
+    uid: 'blog-6',
+  },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
